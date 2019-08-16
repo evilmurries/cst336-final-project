@@ -602,4 +602,4 @@ function createDBConnection() {
         password: "94edbdb4",
         database: "heroku_004b60bb60d84c8"
     });
-{
+}
