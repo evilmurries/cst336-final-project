@@ -591,12 +591,12 @@ function createDBConnection() {
 
 // Create a multi query connection to the database server
 function createDBConnectionMultiple() {
-    var conn = mysql.createPool({
+    var conn = mysql.createConnection({
         connectionLimit: 2,
         host: "us-cdbr-iron-east-02.cleardb.net",
-        user: "b966e7405b082e",
-        password: "e739afd6",
-        database: "heroku_d27a5db666d1cf0",
+        user: "b84ac7bae81020",
+        password: "94edbdb4",
+        database: "heroku_004b60bb60d84c8",
         multipleStatements: true
     });
     return conn;
@@ -604,12 +604,12 @@ function createDBConnectionMultiple() {
 
 //old createDBConnection insides
   function createDBConnection() {
-var conn = mysql.createPool({
+var conn = mysql.createConnection({
         connectionLimit: 7,
         host: "us-cdbr-iron-east-02.cleardb.net",
-        user: "b966e7405b082e",
-        password: "e739afd6",
-        database: "heroku_d27a5db666d1cf0"
+        user: "b84ac7bae81020",
+        password: "94edbdb4",
+        database: "heroku_004b60bb60d84c8"
     });
   return conn;
 }
