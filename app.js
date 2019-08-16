@@ -289,17 +289,17 @@ app.post("/deleteRecord", isAuthenticated, function (req, res) {
 const port = 8081 || process.env.PORT;
 const serial = "0.0.0.0" || process.env.IP;
 
-
+/*
 app.listen(port, serial, function() {
     console.log("Express Server is Running...");
-}); 
+}); */
 
-/*
+
 // Heroku Server Deployment
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Running Express Server...");
-});
-*/
+}); 
+
 
 // Helper Functions
 
