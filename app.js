@@ -592,7 +592,7 @@ function createDBConnection() {
 // Create a multi query connection to the database server
 function createDBConnectionMultiple() {
     var conn = mysql.createConnection({
-        connectionLimit: 2,
+        //connectionLimit: 2,
         host: "us-cdbr-iron-east-02.cleardb.net",
         user: "b84ac7bae81020",
         password: "94edbdb4",
@@ -605,7 +605,7 @@ function createDBConnectionMultiple() {
 //old createDBConnection insides
   function createDBConnection() {
 var conn = mysql.createConnection({
-        connectionLimit: 7,
+        //connectionLimit: 7,
         host: "us-cdbr-iron-east-02.cleardb.net",
         user: "b84ac7bae81020",
         password: "94edbdb4",
