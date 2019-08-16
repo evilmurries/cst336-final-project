@@ -577,7 +577,7 @@ function createDBConnection() {
     return conn;
 } 
 */
-
+/*
 // Create a connection to the database server
 function createDBConnection() {
     var conn = mysql.createConnection({
@@ -587,7 +587,7 @@ function createDBConnection() {
     database:"groupProject"//fill in the database name after it has been created in phpmyadmin
   });
     return conn;
-}
+} */
 
 // Create a multi query connection to the database server
 function createDBConnectionMultiple() {
@@ -600,10 +600,10 @@ function createDBConnectionMultiple() {
         multipleStatements: true
     });
     return conn;
-}
 
-/*
+
 //old createDBConnection insides
+  function createDBConnection() {
 var conn = mysql.createPool({
         connectionLimit: 7,
         host: "us-cdbr-iron-east-02.cleardb.net",
@@ -611,4 +611,6 @@ var conn = mysql.createPool({
         password: "e739afd6",
         database: "heroku_d27a5db666d1cf0"
     });
-*/
+  return conn;
+}
+
