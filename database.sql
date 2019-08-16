@@ -1,8 +1,6 @@
-
 USE heroku_d27a5db666d1cf0;
 
 SET @@auto_increment_increment=1;
-
 
 -- Drop Tables
 DROP TABLE IF EXISTS administration;
@@ -13,7 +11,7 @@ DROP TABLE IF EXISTS animals;
 -- Create Tables
 -- Types of pets for adoption
 CREATE TABLE animals (
-	id INT  AUTO_INCREMENT,
+   id INT  AUTO_INCREMENT,
     animal VARCHAR(100),
     PRIMARY KEY (id)
 );
@@ -26,7 +24,7 @@ CREATE TABLE pets (
   adoption_fee DECIMAL(8, 2),
   location VARCHAR(250),
   image VARCHAR(200),
-  description VARCHAR(500),
+  description VARCHAR(500)
 );
 
 -- Admin users
@@ -100,4 +98,9 @@ INSERT into pets (pet_name, animal_type, adoption_fee, location, image, descript
 -- 1 Otter
 INSERT into pets (pet_name, animal_type, adoption_fee, location, image, description) VALUES ("Monte", 7, 9001.00, "Monterey Bay", "img/adoptions/monte.jpg", "A personal favorite");
 
+
+
+
+
+ALTER TABLE `pets` CHANGE `animal_type` `animal_type` ENUM('dog','cat','horse','guinea pig','rabbit','gator','otter');
 
