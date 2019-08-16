@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+
+    <main>       
+         
+       <form method="GET" action="/">
+          <input type="submit" class ="button" value="Home">
+        </form>
+      
+      <form method="GET" action="/login">
+          <input type="submit" class ="button" value="Admin Login">
+        </form> 
+      
+      <p>Here is our amazing list of animals that we have at Golden State Adoption, we have added a description of each animal so you can get to know them.</p> 
+      
+      
+      <form id="adoptForm">
+        
+      <select id="animal" name="animal">
+                <option value=""></option>
+        </select>
+        
+      <select id="location" name="location">
+                <option value=""></option>
+        </select>
+      
+        <select id="adoptionFee" name="adoptionFee">
+                <option value=""></option>
+        </select>
+        
+        <button id="search" type='button' class ="button">Search</button>
+            
+      </form>
+      
+      <form><button id="searchAll" type='button' class ="button">Display All Pets</button>
+      </form>
+      
+      <div id="animalResult">
+      
+    </div>
+      
+      <form id="cart">
+       
+      <button id="showCart" type='button' class ="button">Show Cart Contents</button>
+            
+      </form>
+        
+      
+      
+    <div id="cartContainer">
+    </div>
+     
+    </main>
+  
+<% include partials/footer.ejs %>

@@ -1,0 +1,60 @@
+body{
+  background-color:#ebe0d1;
+  text color: black;
+  text-align: center;
+}
+
+h1, h2{
+  text-align:center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 4em;
+  margin-bottom 0px;
+  color:#335763;
+}
+
+p{
+  text-align:center;
+  font-size: 1.2em;
+  font-family: 'Roboto Condensed', sans-serif;  
+}
+
+* {
+  box-sizing: border-box;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.button, .adoptButton {
+  background-color:#335763 ;
+  border: none;
+  color: orange;
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px 2px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 16px;
+}
+
+
+input[type=text], input[type=password] {
+  width: 40%;
+  padding: 12px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 5px solid #ccc;
+  box-sizing: border-box;
+}

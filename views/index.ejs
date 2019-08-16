@@ -1,0 +1,42 @@
+<% include partials/header.ejs %>
+    <main>
+      <p>Welcome to Golden State Adoption Center, we are a non-profit that wants to place you with the animal that is a pefect fit for you and them.</p>
+    
+      
+      
+      
+<div class="row">
+  <div class="column">
+    <img src="img/indexcat.jpg" alt="cat" style="width:100%"> <!--Photo by Mikhail Vasilyev on Unsplash-->
+
+  </div>
+  <div class="column">
+    <img src="img/indexpuppy.jpg" alt="dog" style="width:100%"> <!--Photo by Victor Grabarczyk on Unsplash-->
+  </div>
+  
+  <div class="column">
+    <img src="img/newindexbunny.jpg" alt="bunny" style="width:100%"> <!--Photo by Waranya Mooldee on Unsplash-->
+  </div>
+     </div>      
+   
+       
+      <form method="GET" action="/adopt">
+          <input type="submit" class = "button" value="Adopt">
+        </form> 
+      
+      
+      <form method="GET" action="/login">
+          <input type="submit" class = "button" value="Login">
+        </form> 
+      
+   <!-- 
+  <button id="submitButton" type="button">Adopt</button><br>
+    
+  <button id="adminLogin" type="button" >Admin Login</button>
+-->   
+
+    </main>
+    
+<% include partials/footer.ejs %>
+  
+

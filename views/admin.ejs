@@ -1,0 +1,92 @@
+ <% include partials/header.ejs %>
+
+<h1>Admin Functions:</h1>
+        
+        <form method="POST" action="/logout">
+          <input class ="button" type="submit" value="Logout">
+        </form>
+
+
+        <form method="post" action="/insertRecord">
+          Username: <input type="text" style="width: 75px" name="username">
+          Password: <input type="text" style="width: 75px" name="password">
+          Real Name: <input type="text" style="width: 75px" name="realname">
+            <button class ="button" data-onclick="$.get('/insertRecord', function(data){ console.log(data) });">New Admin</button>
+        </form>
+
+<form method="post" action="/insertPet">
+          Pet name: <input type="text" style="width: 75px" name="pet_name">
+          Animal type: <select type="text" style="width: 75px" name="animal_type">
+            <% for(var i = 0; i < pets[1].length; i++) { %>
+              <option class="updateOption"><%= pets[1][i].id %> <%= pets[1][i].animal %></option>
+            <% } %>
+          </select>
+          Adoption fee: <input type="text" style="width: 75px" name="adoption_fee">
+          Location: <select type="text" style="width: 75px" name="location">
+            <% for(var i = 0; i < pets[3].length; i++) { %>
+              <option class="updateOption"><%= pets[3][i].location %></option>
+            <% } %>
+          </select>
+          Image URL: <input type="text" style="width: 75px" name="imageURL">
+          Description: <input type="text" style="width: 75px" name="description">
+            <button class ="button" data-onclick="$.get('/insertPet', function(data){ console.log(data) });">Insert Pet</button>
+        </form>
+
+        <form method="post" action="/updateTable">
+          Pet names: <select id="petNames" name="pet_name">
+            <% for(var i = 0; i < pets[0].length; i++) { %>
+              <option class="updateOption"><%= pets[0][i].pet_name %></option>
+            <% } %>
+          </select>
+          Animal type: <select type="text" style="width: 75px" name="animal_type">
+            <% for(var i = 0; i < pets[1].length; i++) { %>
+              <option class="updateOption"><%= pets[1][i].id %> <%= pets[1][i].animal %></option>
+            <% } %>
+          </select>
+          Adoption fee: <select type="text" style="width: 75px" name="adoption_fee">
+            <% for(var i = 0; i < pets[2].length; i++) { %>
+              <option class="updateOption"><%= pets[2][i].adoption_fee %></option>
+            <% } %>
+          </select>
+          Location: <select type="text" style="width: 75px" name="location">
+            <% for(var i = 0; i < pets[3].length; i++) { %>
+              <option class="updateOption"><%= pets[3][i].location %></option>
+            <% } %>
+          </select>
+          Image URL: <input type="text" style="width: 75px" name="imageURL">
+          Description: <input type="text" style="width: 75px" name="description">
+            <button class ="button" data-onclick="$.get('/updateTable', function(data){ console.log(data) });">Update Pet Table</button>
+        </form>
+
+   <div id="updatePetCurrentValuesDisplay">
+    </div>
+
+        <form method="post" action="/deleteRecord">
+          Pet name: <input type="text" style="width: 75px" name="pet_name">
+            <button class ="button" data-onclick="$.get('/deleteRecord', function(data){ console.log(data) });">Delete Record</button>
+          <div id="success">
+            <% if(typeof delSuccess != "undefined" && delSuccess) { %>
+              <p>
+              Record Successfully Deleted
+              </p>
+            <% } %>
+            <% if(typeof insertSuccess != "undefined" && insertSuccess) { %>
+              <p>
+              Admin Successfully Created
+              </p>
+            <% } %>
+          </div>
+        </form>
+    
+        <form method="post" action="/generateReport">
+            <button class ="button" action="/generateReport">Generate Report
+            </button>
+          <br>
+          Average Adoption Fee: <% if (locals.avg) { %> <%= avg %> <% } %><br>
+          Lowest Adoption Fee: <% if (locals.min) { %> <%= min %> <% } %><br>
+          Highest Adoption Fee:  <% if (locals.max) { %> <%= max %> <% } %><br>
+          There are  <% if(locals.results) { %> <%  for (let animal of results){ %> <%= animal.howmany %> <%= animal.petname %> 
+            <% } %> <% } %> <br>
+        </form>
+
+<% include partials/footer.ejs %>
