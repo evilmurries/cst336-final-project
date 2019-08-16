@@ -600,7 +600,7 @@ function createDBConnectionMultiple() {
         multipleStatements: true
     });
     return conn;
-
+}
 
 //old createDBConnection insides
   function createDBConnection() {
