@@ -565,7 +565,7 @@ app.get("/getPetInfo", function (req, res) {
   
 });
 
-/*
+
 // Create a connection to the database server
 function createDBConnection() {
     var conn = mysql.createConnection({
@@ -575,12 +575,12 @@ function createDBConnection() {
     database:"groupProject"//fill in the database name after it has been created in phpmyadmin
   });
     return conn;
-} */
+} 
 
 // Create a multi query connection to the database server
 function createDBConnectionMultiple() {
     var conn = mysql.createPool({
-        connectionLimit: 2,
+        connectionLimit: 8,
         host: "us-cdbr-iron-east-02.cleardb.net",
         user: "b966e7405b082e",
         password: "e739afd6",
@@ -591,6 +591,7 @@ function createDBConnectionMultiple() {
 }
 
 
+/*
 //old createDBConnection insides
 var conn = mysql.createPool({
         connectionLimit: 7,
@@ -599,4 +600,4 @@ var conn = mysql.createPool({
         password: "e739afd6",
         database: "heroku_d27a5db666d1cf0"
     });
-
+*/
